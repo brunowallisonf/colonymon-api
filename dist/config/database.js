@@ -1,4 +1,4 @@
-module.exports = {
+"use strict";module.exports = {
     development: {
         dialect: 'postgres',
         host: "localhost",
