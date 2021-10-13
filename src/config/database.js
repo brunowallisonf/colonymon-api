@@ -24,6 +24,11 @@ module.exports = {
         password: "31aad17baf1facf4282107a23071ea0c2247e3d51b61efc5e4b1abdecc6873c8",
         database: "d5qirdplejsv9h",
         logging: false,
+        ssl: {
+            key: cKey,
+            cert: cCert,
+            ca: cCA
+        },
         pool: {
             max: 20,
             min: 1,
