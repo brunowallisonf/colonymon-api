@@ -31,7 +31,10 @@ module.exports = {
             idle: 10000,
         },
         dialectOptions: {
-            ssl: true,
+            ssl: {
+                require: true,
+                rejectUnauthorized: false // <<<<<<< YOU NEED THIS
+            }
         },
         define: {
             timestamps: false,
