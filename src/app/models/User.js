@@ -5,14 +5,13 @@ class User extends Model {
     static init(sequelize) {
         super.init({
             id: {
-                type: Sequelize.UUID,
-                defaultValue: uuid(),
+                type: Sequelize.BIGINT,
                 primaryKey: true,
+                autoIncrement: true,
             },
             fullname: {
                 type: Sequelize.STRING,
                 allowNull: false,
-
             },
             email: {
                 type: Sequelize.STRING,
