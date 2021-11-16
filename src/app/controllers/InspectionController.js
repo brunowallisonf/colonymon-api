@@ -1,7 +1,10 @@
+import createInspectionService from "../services/createInspectionService"
 class InspectionController {
-    store(req, res) {
-        const inspection = req.body;
+    async store(req, res) {
+        const { userId } = req
+        const inspection = await createInspectionService(req.body, userId)
+        return res.json({ inspection })
     }
 }
 
-export default InspectionController()
+export default InspectionController;

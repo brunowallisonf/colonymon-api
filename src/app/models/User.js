@@ -1,5 +1,5 @@
 import Sequelize, { Model } from "sequelize"
-import { v4 as uuid } from "uuid"
+
 import bCrypt from "bcrypt"
 class User extends Model {
     static init(sequelize) {

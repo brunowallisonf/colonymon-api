@@ -2,21 +2,23 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTabe("inspectionItem", {
+    return queryInterface.createTable("inspection_item", {
       id: {
         type: Sequelize.BIGINT,
         primaryKey: true,
         autoIncrement: true,
       },
 
-      inspectionId: {
-        type: Sequelizelize.BIGINT,
+      inspection_id: {
+        type: Sequelize.BIGINT,
       },
       question: {
         type: Sequelize.STRING,
       },
-      metConditions: {
-        type: Sequelize.BOOLEAN,
+      met_conditions: {
+        type: Sequelize.ENUM,
+        values: ["yes", "no", "non-applicable"]
+
       },
       observations: {
         type: Sequelize.STRING
@@ -26,6 +28,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable("inspectionItem");
+    return queryInterface.dropTable("inspection_item");
   }
 };

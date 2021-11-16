@@ -1,8 +1,9 @@
 import Sequelize from "sequelize"
 import databaseConfig from "../config/database"
 import User from "../app/models/User"
-
-const models = [User]
+import Inspection from "../app/models/Inspection"
+import InspectionItem from "../app/models/InspectionItem"
+const models = [User, Inspection, InspectionItem]
 class Database {
     constructor() {
         this.init()
@@ -17,7 +18,7 @@ class Database {
             .catch(err =>
                 console.error('Unable to connect to the MySQL database:', err)
             );
-        models.map(value => value.init(this.connection))
+        models.map(value => value.init(this.connection)).map(value => value.associate && value.associate(this.connection.models))
     }
 }
 

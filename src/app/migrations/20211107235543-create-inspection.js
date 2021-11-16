@@ -2,41 +2,41 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTabe("inspections", {
+    return queryInterface.createTable("inspections", {
       id: {
         type: Sequelize.BIGINT,
         primaryKey: true,
         autoIncrement: true,
       },
 
-      userId: {
+      user_id: {
         type: Sequelize.BIGINT,
       },
-      inspectionDate: {
+      inspection_date: {
         type: Sequelize.DATE
       },
-      apiaryId: {
+      apiary_id: {
         type: Sequelize.STRING
       },
-      recorderId: {
+      recorder_id: {
         type: Sequelize.STRING
       },
-      hiveId: {
+      hive_id: {
         type: Sequelize.STRING
       },
       observer: {
         type: Sequelize.STRING
       },
-      framesNumberBox1: {
+      frames_number_box1: {
         type: Sequelize.INTEGER
       },
-      framesNumberBox2: {
+      frames_number_box2: {
         type: Sequelize.INTEGER
       },
     })
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable("inspections")
+    return queryInterface.dropTable("inspections")
   }
 };

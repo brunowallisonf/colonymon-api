@@ -1,8 +1,8 @@
 import { Router } from "express";
 const routes = Router();
-import UserController from "../controllers/UserController"
-const userController = new UserController()
-routes.post("/", userController.store)
+import InspectionController from "../controllers/InspectionController"
+const inspectionController = new InspectionController()
+routes.post("/", inspectionController.store)
 
 
 export default routes;

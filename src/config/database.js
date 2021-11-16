@@ -6,6 +6,7 @@ module.exports = {
         password: "88130279",
         database: "colonymon",
         logging: false,
+
         pool: {
             max: 20,
             min: 1,
