@@ -38,7 +38,7 @@ class Inspection extends Model {
         return this
     }
     static associate(models) {
-        this.hasOne(models.User, { foreignKey: "userId" });
+        this.belongsTo(models.User, { foreignKey: "userId" });
     }
 }
 
