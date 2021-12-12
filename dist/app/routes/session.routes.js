@@ -4,5 +4,5 @@ var _SessionController = require('../controllers/SessionController'); var _Sessi
 
 const sessionController = new (0, _SessionController2.default)()
 routes.post("/", sessionController.store)
-
+routes.get("/verify", sessionController.verify)
 exports. default = routes;

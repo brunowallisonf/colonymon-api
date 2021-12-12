@@ -9,7 +9,7 @@ class Database {
         this.init()
     }
     init() {
-        this.connection = new Sequelize(databaseConfig[process.env.NODE_ENV || "development"])
+        this.connection = new Sequelize(databaseConfig)
         this.connection
             .authenticate()
             .then(() =>
