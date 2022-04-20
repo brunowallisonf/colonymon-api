@@ -29,5 +29,5 @@ jobs:
         application_name: colonymon-api
         environment_name: Colonymonapi-env
         version_label: 123
-        region: us-west-1
+        region: us-east-1
         deployment_package: app.zip
