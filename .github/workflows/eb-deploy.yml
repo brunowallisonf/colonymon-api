@@ -28,6 +28,6 @@ jobs:
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         application_name: colonymon-api
         environment_name: Colonymonapi-env
-        version_label: 1234
+        version_label: 567
         region: us-east-1
         deployment_package: app.zip
