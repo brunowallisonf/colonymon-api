@@ -28,4 +28,4 @@ jobs:
         environment_name: Colonymonapi-env
         version_label: 123
         region: us-west-1
-        deployment_package: deploy.zip
+        deployment_package: app.zip

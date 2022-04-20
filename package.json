@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/server.js",
-    "build": "npx sequelize-cli db:migrate && rm -rf ./dist && sucrase ./src -d ./dist --transforms imports",
+    "build": "rm -rf ./dist && sucrase ./src -d ./dist --transforms imports",
     "postbuild": "zip app.zip -r dist package.json git.properties.json .npmrc",
     "start": "node ./dist/server.js"
   },
