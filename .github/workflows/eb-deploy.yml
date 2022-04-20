@@ -4,18 +4,20 @@ on:
     branches:
     - main
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-
     - name: Setup Nodejs
       uses: actions/setup-node@v3
       with:
         node-version: '14'
-
+        
     - name: Checkout source code
       uses: actions/checkout@v2
-    
+
+    - name: Install packages
+      run: npm Install
+
     - name: Generate deployment package
       run: npm run build
 
