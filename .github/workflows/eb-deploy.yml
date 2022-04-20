@@ -1,0 +1,31 @@
+name: Deploy master
+on:
+  push:
+    branches:
+    - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Setup Nodejs
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'
+
+    - name: Checkout source code
+      uses: actions/checkout@v2
+    
+    - name: Generate deployment package
+      run: npm run build
+
+    - name: Deploy to EB
+      uses: einaregilsson/beanstalk-deploy@v20
+      with:
+        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        application_name: colonymon-api
+        environment_name: Colonymonapi-env
+        version_label: 123
+        region: us-west-1
+        deployment_package: deploy.zip
